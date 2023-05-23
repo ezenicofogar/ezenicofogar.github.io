@@ -159,7 +159,7 @@ function simpleRender() {
 }
 
 function start() {
-
+    console.log("Rendering started");
     // load textures
     const albTexture = __loadTexture(gl, "../docs/assets/png/render_albedo.png");
     const depthTexture = __loadTexture(gl, "../docs/assets/png/render_depth.png");
@@ -228,6 +228,7 @@ function start() {
 
     gl.drawArrays(gl.TRIANGLES, 0, 6);
 
+    console.log("First Frame ok.");
     let drawLoop = () => {
         if (redrawRequest) {
             gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
@@ -247,6 +248,7 @@ function start() {
             gl.uniform1f(uFocusFactor, focalDistance);
 
             gl.drawArrays(gl.TRIANGLES, 0, 6);
+            console.log("frame");
             redrawRequest = false;
         }
         requestAnimationFrame(drawLoop)
