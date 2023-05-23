@@ -130,7 +130,7 @@ function __loadTexture(gl, imageUrl) {
         0, // Border
         gl.RGBA, // Source Format
         gl.UNSIGNED_BYTE, // Source Type
-        new Uint8Array([63, 63, 74, 255]) // Image Data
+        new Uint8Array([0, 0, 0, 255]) // Image Data
     );
 
     const image = new Image();
