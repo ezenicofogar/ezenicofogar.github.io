@@ -34,7 +34,7 @@ out vec4 FragColor;
 void main()
 {
     vec2 texScale = vec2(1.0 / uTextureSizeX, 1.0 / uTextureSizeY);
-    int aperture = int(abs(texture(uDepthTx, vTextureUV).r - uFocusFactor) * 20.0); // pixels
+    int aperture = int(abs(texture(uDepthTx, vTextureUV).r - uFocusFactor) * 10.0); // pixels
 
     vec3 color = vec3(0.0, 0.0, 0.0);
     
