@@ -161,9 +161,9 @@ function simpleRender() {
 function start() {
 
     // load textures
-    const albTexture = __loadTexture(gl, "/docs/assets/png/render_albedo.png");
-    const depthTexture = __loadTexture(gl, "/docs/assets/png/render_depth.png");
-    const highTexture = __loadTexture(gl, "/docs/assets/png/render_high.png");
+    const albTexture = __loadTexture(gl, "https://ezenicofogar.github.io/docs/assets/png/render_albedo.png");
+    const depthTexture = __loadTexture(gl, "https://ezenicofogar.github.io/docs/assets/png/render_depth.png");
+    const highTexture = __loadTexture(gl, "https://ezenicofogar.github.io/docs/assets/png/render_high.png");
 
     // create shader program
     const shader = __wglCreateProgram();
