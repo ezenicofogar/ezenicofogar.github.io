@@ -1,0 +1,32 @@
+/* GENERAL: ELEMENT TAGS */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    color: #F2F2F2;
+    background-color: #0D0D0D;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+main {
+    padding-top: 4em;
+    min-height: 120svh;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+}

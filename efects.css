@@ -1,0 +1,27 @@
+/* General */
+
+.text-shadow {
+    text-shadow: 0px 0px 7px #000;
+}
+
+/* Text Gradients */
+
+.grad-1 { background: linear-gradient(135deg, #0F0, #0FF); }
+.grad-2 { background: linear-gradient(135deg, #F00, #FA0); }
+
+.grad-txt {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Glass Panel */
+
+.glass {
+    backdrop-filter:
+        blur(2px)
+        hue-rotate(-100deg)
+        sepia(40%)
+        hue-rotate(100deg)
+        blur(6px);
+}

@@ -1,0 +1,15 @@
+header {
+    position: fixed;
+    width: 100%;
+    
+    box-sizing: border-box;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    border-bottom: 1px solid #FFF1;
+
+    transform: translateY(0%);
+    transition-property: transform;
+    transition-duration: 350ms;
+    transition-delay: 150ms;
+    transition-timing-function: ease-in-out;
+}
