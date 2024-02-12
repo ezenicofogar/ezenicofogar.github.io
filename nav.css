@@ -6,6 +6,7 @@ header {
     padding-top:    1.1em;
     padding-bottom: 0.9em;
 
+    color: #C1C1C1;
     border-bottom: 1px solid #FFF1;
     
     transform: translateY(0%);
@@ -41,15 +42,22 @@ header {
 }
 
 #nav-btn {
-    border: 1px solid #F2F2F2;
+    border: 1px solid;
+    border-color: #C1C1C1;
     padding: 0.3em 0;
     border-radius: 5px;
 }
 
+/* Mobile Collapse */
 
 @media (max-width: 575.98px) {
+    header {
+        padding-top:    0.6em;
+        padding-bottom: 0.4em;
+    }
     #nav-bar{
         flex-wrap: wrap;
+        gap: 0.5em;
     }
     #nav-links {
         order: 3;
@@ -63,4 +71,25 @@ header {
     #nav-links ul {
         gap: 4em;
     }
+}
+
+/* Transitions */
+
+header a {
+    transition-property: color;
+    transition-duration: 350ms;
+}
+
+header a:hover {
+    color: #F2F2F2;
+}
+
+#nav-btn {
+    transition-property: color, border-color;
+    transition-duration: 350ms;
+}
+
+#nav-btn:hover {
+    border-color: #F2F2F2;
+    color: #F2F2F2;
 }
