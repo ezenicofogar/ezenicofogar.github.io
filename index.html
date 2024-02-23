@@ -3,61 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="efects.css">
-    <link rel="stylesheet" href="general.css">
-    <link rel="stylesheet" href="generalClass.css">
-    <link rel="stylesheet" href="nav.css">
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./tailwind.css">
 </head>
-<body>
-    <header class="glass" id="header">
-        <div class="cont-l" id="nav-bar">
-            <!-- Logo -->
-            <a href="#" class="nav-block" id="nav-logo">
-                <span>EF&#x1F58B;</span>
-            </a>
-            <!-- Nav -->
-            <nav id="nav-links">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">CV.pdf</a></li>
-                    <li><a href="#">More</a></li>
-                </ul>
-            </nav>
-            <!-- Contact -->
-            <a href="#" class="nav-block" id="nav-btn">Contact</a>
-        </div>
+<body class="bg-stone-50 text-stone-950 dark:bg-gray-900 dark:text-gray-50
+             font-medium dark:font-normal">
+    
+    <header id="header" class="fixed w-full grid grid-cols-2 md:grid-cols-3
+                   py-3 md:py-4 px-5 gap-y-2
+                   justify-items-center items-center
+                   backdrop-blur bg-stone-300/20 dark:bg-gray-950/20
+                   border-b border-b-stone-200 dark:border-b-gray-800
+                   transition-transform translate-y-0 delay-300 duration-700">
+        <p class="text-2xl max-md:justify-self-start">enf.github.io</p>
+        <nav class="w-full max-w-md max-md:order-3 max-md:col-span-2">
+            <ul class="grid grid-cols-3 gap-3 justify-items-center">
+                <li><a class="" href="#">About</a></li>
+                <li><a class="" href="#">Language</a></li>
+                <li><button>Dark</button></li>
+            </ul>
+        </nav>
+        <!-- TO-DO: Gradient Button -->
+        <a class="max-md:justify-self-end max-md:order-2
+                  px-7 py-1.5 rounded-md border-2 border-transparent dark:border-lime-500 dark:hover:border-lime-400
+                  bg-lime-400 hover:bg-lime-500 dark:bg-transparent dark:hover:bg-lime-500/20 transition-colors" href="#">Contact</a>
     </header>
 
-    <main>
-        <!-- Title section -->
-        <section id="title-section" class="cont-l">
-            <h1>Ezenicofogar's <span class="grad-2 grad-txt">website</span></h1>
-            <p class="subtitle">Subtitle</p>
-        </section>
-        <!-- Rest of the page -->
-        <section>
-            <!-- About Me -->
-            <article></article>
-            <!-- Projects -->
-            <article></article>
-        </section>
+    <main class="pt-36 px-5 mx-auto max-w-screen-xl min-h-screen">
+        <div class="text-center mb-12">
+            <a href="#" class="px-5 py-1 rounded-full
+                               shadow-md shadow-lime-950/20 dark:shadow-[0_0_40px_-1px] dark:shadow-lime-400/30
+                               border-2 border-transparent dark:border-lime-500 dark:hover:border-lime-400
+                               bg-lime-400 hover:bg-lime-500 dark:bg-transparent dark:hover:bg-lime-500/20
+                               transition-all">
+                <span class="dark:font-bold bg-clip-text text-transparent bg-stone-950 dark:bg-lime-400">&#x1F389; Now open to new opportunities!</span>
+            </a>
+        </div>
+        <h1 class="text-3xl md:text-5xl text-center">ezenicofogar.github.io</h1>
     </main>
-    <footer>
-        <!-- More informaiton -->
+    <footer class="p-10 mx-auto max-w-screen-xl">
         <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            <br>
-            Maiores, ex? Nostrum commodi fuga quos.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+            Doloremque voluptate eligendi id ea voluptas, vero reiciendis facilis eaque ut delectus ratione,
+            assumenda quis eveniet deleniti debitis quaerat quasi voluptatum suscipit.
         </p>
     </footer>
 
-    <script src="nav.js"></script>
+    <script src="./darkmode.js"></script>
+    <script src="./nav.js"></script>
 </body>
 </html>
