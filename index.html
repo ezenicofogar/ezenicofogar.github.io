@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./tailwind.css">
 </head>
 <body class="bg-stone-50 text-stone-950 dark:bg-gray-900 dark:text-gray-50
-             font-medium dark:font-normal">
+             font-medium dark:font-normal transition-colors">
     
     <header id="header" class="fixed w-full grid grid-cols-2 md:grid-cols-3
                    py-3 md:py-4 px-5 gap-y-2
@@ -19,14 +19,30 @@
                    border-b border-b-stone-200 dark:border-b-gray-800
                    transition-transform translate-y-0 delay-300 duration-700">
         <p class="text-2xl max-md:justify-self-start">enf.github.io</p>
+        <!-- To-Do: links hover -->
         <nav class="w-full max-w-md max-md:order-3 max-md:col-span-2">
-            <ul class="grid grid-cols-3 gap-3 justify-items-center">
-                <li><a class="" href="#">About</a></li>
-                <li><a class="" href="#">Language</a></li>
-                <li><button>Dark</button></li>
+            <ul class="grid grid-cols-3 gap-3 justify-items-center items-center">
+                <li><a class="text-stone-700 dark:text-gray-400 hover:text-stone-950 hover:dark:text-gray-50 transition-colors" href="#">About</a></li>
+                <li><a class="text-stone-700 dark:text-gray-400 hover:text-stone-950 hover:dark:text-gray-50 transition-colors" href="#">Language</a></li>
+                <li class="inline-flex">
+                    <button title="Toggle dark mode" id="dm-mode-btn" type="button" class="">
+                        <svg id="dm-mode-ico-light" class="dark:hidden w-10 h-6 text-stone-700 dark:text-gray-400 hover:text-stone-950 hover:dark:text-gray-50 transition-colors" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M12 21a9 9 0 0 1-.5-18v0A9 9 0 0 0 20 15h.5a9 9 0 0 1-8.5 6Z"/>
+                        </svg>
+                        <svg id="dm-mode-ico-dark" class="hidden dark:block w-10 h-6 text-stone-700 dark:text-gray-400 hover:text-stone-950 hover:dark:text-gray-50 transition-colors" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 5V3m0 18v-2M7 7 5.7 5.7m12.8 12.8L17 17M5 12H3m18 0h-2M7 17l-1.4 1.4M18.4 5.6 17 7.1M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/>
+                        </svg>
+                    </button>
+                    <button title="Set system default" id="dm-default-btn" type="button" class="hidden absolute translate-x-10">
+                        <div class="w-10 h-6 flex justify-start items-center">
+                            <svg class="w-4 h-4 text-stone-700 dark:text-gray-400 hover:text-stone-950 hover:dark:text-gray-50 transition-colors" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18 18 6m0 12L6 6"/>
+                            </svg>
+                        </div>
+                    </button>
+                </li>
             </ul>
         </nav>
-        <!-- TO-DO: Gradient Button -->
         <a class="max-md:justify-self-end max-md:order-2
                   px-7 py-1.5 rounded-md border-2 border-transparent dark:border-lime-500 dark:hover:border-lime-400
                   bg-lime-400 hover:bg-lime-500 dark:bg-transparent dark:hover:bg-lime-500/20 transition-colors" href="#">Contact</a>

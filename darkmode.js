@@ -1,10 +1,42 @@
-// On page load or when changing themes, best to add inline in `head` to avoid FOUC
-if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark')
+const dmLightIcon  = document.getElementById("dm-mode-ico-light");
+const dmDarkIcon   = document.getElementById("dm-mode-ico-dark");
+const dmModeBtn    = document.getElementById("dm-mode-btn");
+const dmDefaultBtn = document.getElementById("dm-default-btn");
+const dmSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+let dmDark         = null;
+
+// INITIAL
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && dmSystemDark)) {
+    dmDark = true;
+    document.documentElement.classList.add('dark');
 } else {
-    document.documentElement.classList.remove('dark')
+    dmDark = false;
+    document.documentElement.classList.remove('dark');
+}
+if ('theme' in localStorage) {
+    dmDefaultBtn.classList.remove('hidden');
 }
 
-// localStorage.theme = 'light'
-// localStorage.theme = 'dark'
-// localStorage.removeItem('theme')
+function dmToggle() {
+    if (dmDark) {
+        dmDark = false;
+        document.documentElement.classList.remove('dark');
+    } else {
+        dmDark = true;
+        document.documentElement.classList.add('dark');
+    }
+}
+
+dmDefaultBtn.addEventListener('click', () => {
+    dmDefaultBtn.classList.add('hidden');
+    localStorage.removeItem('theme');
+    if (dmDark != dmSystemDark) {
+        dmToggle();
+    }
+})
+
+dmModeBtn.addEventListener('click', () => {
+    dmToggle();
+    localStorage.theme = dmDark ? 'dark' : 'light';
+    dmDefaultBtn.classList.remove('hidden');
+})
