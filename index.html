@@ -12,7 +12,11 @@
 <body class="bg-stone-50 text-stone-950 dark:bg-gray-900 dark:text-gray-50
              font-medium dark:font-normal transition-colors">
     
-    <div class="absolute flex h-[26em] w-full -z-50 bg-gradient-to-b from-indigo-700 opacity-15"></div>
+    <div class="absolute flex h-[26em] w-full -z-40 bg-gradient-to-b from-indigo-700 opacity-20"></div>
+
+    <div class="fixed h-screen w-screen -z-50 transition-all blur-xl scale-150">
+        <canvas id="bg-canvas" height="200px" width="200px" class="h-screen w-screen object-cover"></canvas>
+    </div>
 
     <header id="header" class="fixed w-full grid grid-cols-2 md:grid-cols-3
                                py-3 md:py-4 px-5 gap-y-3 z-50
@@ -144,6 +148,7 @@
         </div>
     </footer>
 
+    <script src="./bgCanvas.js"></script>
     <script src="./darkmode.js"></script>
     <script src="./nav.js"></script>
 </body>
