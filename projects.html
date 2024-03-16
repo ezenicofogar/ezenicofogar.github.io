@@ -14,6 +14,10 @@
     
     <div class="absolute flex h-[26em] w-full -z-50 bg-gradient-to-b from-indigo-700 opacity-15"></div>
 
+    <div class="fixed h-screen w-screen -z-50 transition-all blur-2xl scale-150">
+        <canvas id="bg-canvas" height="200px" width="200px" class="h-screen w-screen object-cover"></canvas>
+    </div>
+
     <header id="header" class="fixed w-full grid grid-cols-2 md:grid-cols-3
                                py-3 md:py-4 px-5 gap-y-3
                                justify-items-center items-center
@@ -48,7 +52,7 @@
             </ul>
         </nav>
         <a class="max-md:justify-self-end max-md:order-2 px-7 py-1.5 rounded-md border-2 transition-colors
-                  border-transparent dark:border-lime-500 dark:hover:border-lime-400 bg-lime-400 hover:bg-lime-500 dark:bg-transparent dark:hover:bg-lime-500/20"
+                  border-transparent dark:border-violet-500 dark:hover:border-violet-400 bg-indigo-400 hover:bg-indigo-500 dark:bg-transparent dark:hover:bg-violet-500/20"
             href="./contact.html">Contact</a>
     </header>
 
@@ -56,10 +60,10 @@
         <section class="pt-48 mb-24">
             <h1 class="text-4xl md:text-5xl text-center drop-shadow dark:drop-shadow-none  mb-4">
                 Projects
-                <span class="font-semibold bg-clip-text text-transparent bg-gradient-to-br from-lime-500 to-cyan-500 dark:from-lime-400 dark:to-cyan-500">
+                <span class="font-semibold bg-clip-text text-transparent bg-gradient-to-br from-green-400 to-indigo-600 dark:from-amber-400 dark:to-rose-500">
                     showroom</span>.
             </h1>
-            <p class="text-3xl md:text-4xl text-center font-black text-red-600">
+            <p class="text-3xl md:text-4xl text-center font-black text-stone-400 dark:text-gray-600">
                 [ This page is in development ]
             </p>
         </section>
@@ -76,6 +80,7 @@
         </div>
     </footer>
 
+    <script src="./bgCanvas.js"></script>
     <script src="./darkmode.js"></script>
     <script src="./nav.js"></script>
 </body>

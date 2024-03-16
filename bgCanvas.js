@@ -9,7 +9,7 @@ function __shader(gl, type, source) {
     gl.shaderSource(shader, source);
     gl.compileShader(shader);
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-        alert(
+        console.log(
             `An error occurred compiling the shaders: ${gl.getShaderInfoLog(shader)}`,
         );
         gl.deleteShader(shader);
@@ -27,7 +27,7 @@ function __program(gl, vertex, fragment) {
     gl.attachShader(program, _fragment);
     gl.linkProgram(program);
     if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-        alert(
+        console.log(
             `Unable to initialize the shader program: ${gl.getProgramInfoLog(
                 program,
             )}`,
@@ -51,22 +51,28 @@ function runBackground() {
     gl = background.context;
     let program = __program(background.context,
         `#version 300 es
+
         layout(location = 0) in vec2 aVertexPosition;
-        layout(location = 1) in vec3 aVertexNfo;
+        layout(location = 1) in vec2 aVertexNfo;
+
         uniform float time;
         uniform float darkmode;
+        
         out vec3 vColor;
+
         void main() {
             vec2 offset = vec2(sin(aVertexNfo.x * 0.01 * time), cos(aVertexNfo.x * 0.02124521 * time));
-            gl_Position = vec4(aVertexPosition + offset, 0.0, 1.0);
-            vec3 base = vec3(0.5 + darkmode * -0.48);
-            float tint = sin(aVertexNfo.y * 0.1351256 * time) * 0.5 + 0.5;
-            float white = sin(aVertexNfo.y * 0.2756132 * time) * 0.5 + 0.5;
+            gl_Position = vec4(aVertexPosition + offset * 0.2, 0.0, 1.0);
+            vec3 base = vec3(0.5 + darkmode * -0.5);
+            float tintR = sin(aVertexNfo.y * 0.1351256 * time) * 0.5 + 0.5;
+            float tintG = sin(aVertexNfo.y * 0.1265884 * time) * 0.5 + 0.5;
+            float tintB = sin(aVertexNfo.y * 0.1415256 * time) * 0.5 + 0.5;
+            float white = sin(aVertexNfo.y * 0.2756132 * time) * 0.3 + 0.5;
             if (darkmode > 0.0) {
-                vColor = base + vec3(tint * 0.12, tint * -0.04, (1.0 - tint) * 0.25) + vec3(white, white, white) * 0.08;
+                vColor = base + vec3(tintR * 0.12, tintG * -0.04, tintB * 0.25) + vec3(white, white, white) * 0.14;
             }
             else {
-                vColor = base + vec3(tint * -0.12, tint * 0.04, (1.0 - tint) * 0.1) - vec3(white, white, white) * 0.19;
+                vColor = base - vec3(tintR * 0.16, tintG * 0.12 + 0.07, tintB * 0.06 + 0.12) + vec3(white, white, white) * 0.1;
             }
         }`,
         `#version 300 es
@@ -85,12 +91,12 @@ function runBackground() {
     let buffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-        -2.0,  2.0, 10.16633,  1.45286,  0.0, // A       A----C----E  +1
-        -2.0, -2.0, 14.82547,  1.36477,  0.0, // B       |   /|   /|
-         0.0,  2.0, 13.59673,  1.82846,  0.0, // C       |  / |  / |
-         0.0, -2.0, 11.98261,  1.14568,  0.0, // D       | /  | /  |
-         2.0,  2.0, 15.06385,  1.02359,  0.0, // E       |/   |/   |
-         2.0, -2.0, 12.93576,  1.62866,  0.0, // F   -1  B----D----F
+        -1.2,  1.2, 10.16633,  1.45286,
+        -1.2, -1.2, 14.82547,  1.36477,
+         0.0,  1.2, 13.59673,  1.82846,
+         0.0, -1.2, 11.98261,  1.14568,
+         1.2,  1.2, 15.06385,  1.02359,
+         1.2, -1.2, 12.93576,  1.62866,
     ]), gl.STATIC_DRAW);
     
     gl.vertexAttribPointer(
@@ -98,16 +104,16 @@ function runBackground() {
         2,
         gl.FLOAT,
         false,
-        4 * 5,
+        4 * 4,
         4 * 0,
     );
     gl.enableVertexAttribArray(gl.getAttribLocation(program, "aVertexPosition"));
     gl.vertexAttribPointer(
         gl.getAttribLocation(program, "aVertexNfo"),
-        3,
+        2,
         gl.FLOAT,
         false,
-        4 * 5,
+        4 * 4,
         4 * 2,
     );
     gl.enableVertexAttribArray(gl.getAttribLocation(program, "aVertexNfo"));
