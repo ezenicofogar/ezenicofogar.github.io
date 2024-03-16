@@ -43,7 +43,7 @@ function redraw() {
     let DT = Date.now() - background.startTime;
     background.context.uniform1f(background.uTime, 0.003 * DT);
 
-    background.context.drawArrays(background.context.TRIANGLE_STRIP, 0, 6);
+    background.context.drawArrays(background.context.TRIANGLE_STRIP, 0, 8);
     window.requestAnimationFrame(redraw)
 }
 
@@ -93,10 +93,12 @@ function runBackground() {
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
         -1.2,  1.2, 10.16633,  1.45286,
         -1.2, -1.2, 14.82547,  1.36477,
-         0.0,  1.2, 13.59673,  1.82846,
-         0.0, -1.2, 11.98261,  1.14568,
-         1.2,  1.2, 15.06385,  1.02359,
-         1.2, -1.2, 12.93576,  1.62866,
+        -0.4,  1.2, 13.59673,  1.82846,
+        -0.4, -1.2, 11.98261,  1.14568,
+         0.4,  1.2, 15.06385,  1.02359,
+         0.4, -1.2, 12.93576,  1.62866,
+         1.2,  1.2, 16.51352,  1.16456,
+         1.2, -1.2, 11.21534,  1.47172,
     ]), gl.STATIC_DRAW);
     
     gl.vertexAttribPointer(
