@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./tailwind.css">
+    <link rel="stylesheet" href="/static/css/tailwind.css">
 </head>
 <body class="bg-stone-50 text-stone-950 dark:bg-gray-900 dark:text-gray-50
              font-medium dark:font-normal transition-colors">
@@ -24,14 +24,14 @@
                                backdrop-blur bg-stone-300/20 dark:bg-gray-950/20
                                border-b border-b-stone-950/5 dark:border-b-gray-50/5
                                transition-transform translate-y-0 delay-300 duration-700">
-        <p class="select-none text-2xl max-md:justify-self-start">
-            |ENF| </p>
+        <a href="/" class="select-none text-2xl max-md:justify-self-start">
+            |ENF| </a>
         <nav class="w-full max-w-md max-md:order-3 max-md:col-span-2">
             <ul class="grid grid-cols-3 gap-3 justify-items-center items-center">
                 <li><a class="text-stone-700 dark:text-gray-400 hover:text-stone-950 hover:dark:text-gray-50 transition-colors"
-                    href="./"> Home </a></li>
+                    href="/"> Home </a></li>
                 <li><a class="text-stone-700 dark:text-gray-400 hover:text-stone-950 hover:dark:text-gray-50 transition-colors"
-                    href="./projects.html"> Projects </a></li>
+                    href="/projects"> Projects </a></li>
                 <li class="inline-flex">
                     <button title="Toggle dark mode" id="dm-mode-btn" type="button" class="">
                         <svg id="dm-mode-ico-light" class="dark:hidden w-10 h-6 text-stone-700 dark:text-gray-400 hover:text-stone-950 hover:dark:text-gray-50 transition-colors" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -53,7 +53,7 @@
         </nav>
         <a class="max-md:justify-self-end max-md:order-2 px-7 py-1.5 rounded-md border-2 transition-colors
                   border-transparent dark:border-violet-500 dark:hover:border-violet-400 bg-indigo-400 hover:bg-indigo-500 dark:bg-transparent dark:hover:bg-violet-500/20"
-            href="./contact.html">Contact</a>
+            href="/contact">Contact</a>
     </header>
 
     <main class="px-5 mx-auto max-w-screen-xl">
@@ -131,8 +131,9 @@
             }
         }
     </script>
-    <script src="./bgCanvas.js"></script>
-    <script src="./darkmode.js"></script>
-    <script src="./nav.js"></script>
+    
+    <script src="/static/js/bgCanvas.js"></script>
+    <script src="/static/js/darkmode.js"></script>
+    <script src="/static/js/nav.js"></script>
 </body>
 </html>
