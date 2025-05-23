@@ -1,9 +1,27 @@
-# Portfolio
+# ezenicofogar.github.io
 
 ## Build
 
-### Tailwind
+This project is intended to be a static web page, only the styles are processed using [Tailwind](https://tailwindcss.com/).
 
-This project uses Tailwind CSS v3.
+- Use this command for **development**:
 
-`tailwind3 -i ./input.css -o ./static/css/tailwind.css --minify`
+    `tailwindcss -i ./source/tailwind.css -o ./static/css/styles.css --watch`
+
+- Use this command for **production**:
+
+    `tailwindcss -i ./source/tailwind.css -o ./static/css/styles.css --minify`
+
+## Which tools are used?
+
+- ### [Tailwind CSS](https://tailwindcss.com/)
+
+    *MIT License*
+
+- ### [Lenis](https://lenis.darkroom.engineering/)
+
+    *MIT License*
+
+- ### [Gsap](https://gsap.com/)
+
+    [*Standard "No Charge" GSAP License*](https://gsap.com/community/standard-license/)
