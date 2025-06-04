@@ -15,7 +15,42 @@
     <!-- Dark mode utility -->
     <script src="./static/js/DarkModeController.js"></script>
 </head>
-<body>
+<body class="body">
+    <header class="header">
+        <div class="bar-hide-transform" id="header-bar">
+            <p class="header-enf">ENF</p>
+            <ul class="header-ul">
+                <li class="header-li text-link transition-colors">INICIO</li>
+                <li class="header-li text-link transition-colors">MD</li>
+                <li class="header-li text-link transition-colors">FIN</li>
+            </ul>
+            <p class="header-enf opacity-0">ENF</p>
+        </div>
+        <div class="max-md:-rotate-90" id="header-icons">
+            <svg class="transition-all absolute" xmlns="http://www.w3.org/2000/svg"  width="36"  height="36"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-layout-navbar-expand"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 3a3 3 0 0 1 2.995 2.824l.005 .176v12a3 3 0 0 1 -2.824 2.995l-.176 .005h-12a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-12a3 3 0 0 1 2.824 -2.995l.176 -.005h12zm1 6h-14v9a1 1 0 0 0 .883 .993l.117 .007h12a1 1 0 0 0 .993 -.883l.007 -.117v-9zm-8.387 3.21l.094 .083l1.293 1.292l1.293 -1.292a1 1 0 0 1 1.32 -.083l.094 .083a1 1 0 0 1 .083 1.32l-.083 .094l-2 2a1 1 0 0 1 -1.32 .083l-.094 -.083l-2 -2a1 1 0 0 1 1.32 -1.497z" /></svg>
+            <svg class="transition-all bar-hide-transform-icon" xmlns="http://www.w3.org/2000/svg"  width="36"  height="36"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+        </div>
+        <script>
+            (()=>{
+                const bar = document.getElementById("header-bar")
+                const icons = document.getElementById("header-icons")
+                const lis = document.getElementsByClassName("header-li")
+                let toggle = ()=>{
+                    bar.classList.toggle("bar-hide-transform")
+                    for (const icon of icons.children) {
+                        icon.classList.toggle("bar-hide-transform-icon")
+                    }
+                }
+                icons.addEventListener("click", ()=>{toggle()})
+                for (const li of lis) {
+                    li.addEventListener("click", ()=>{toggle()})
+                }
+            })()
+        </script>
+    </header>
+    <main>
+        <h1 class="main-h1 text-ellipsis text-wrap">EZEQUIEL FOGAR</h1>
+    </main>
     <!-- Gsap -->
     <script src="./static/thirdparties/gsap/gsap.min.js"></script>
     <script src="./static/thirdparties/gsap/ScrollTrigger.min.js"></script>
