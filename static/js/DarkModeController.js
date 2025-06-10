@@ -22,6 +22,9 @@ const DarkModeController = (()=>{
             localStorage.removeItem("theme");
             this._apply();
         }
+        Get() {
+            return ("theme" in localStorage) ? localStorage.theme : "System";
+        }
     }
     return new DarkModeControllerClass();
 })();

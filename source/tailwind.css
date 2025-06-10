@@ -3,74 +3,44 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+    /* Default overrides */
+    --default-transition-duration: 400ms;
+    
     /* Google Fonts */
     --font-inter: "Inter", sans-serif;
     --font-boldonse: "Boldonse", system-ui;
-    --default-transition-duration: 400ms;
+
+    /* Base Colors */
+    --color-light-100: var(--color-stone-100);
+    --color-light-900: var(--color-stone-900);
+    --color-dark-100: var(--color-neutral-100);
+    --color-dark-900: var(--color-neutral-900);
+}
+
+@import "./header.css";
+
+@layer base {
+    .bg-base {
+        @apply bg-light-100 dark:bg-dark-900;
+    }
+    .text-base {
+        @apply text-light-900 dark:text-dark-100;
+    }
+    .debug {
+        @apply
+            bg-blue-500/15
+            border
+            border-fuchsia-500/50;
+    }
 }
 
 @layer components {
     /* BODY */
     .body {
-        @apply relative
+        @apply
+            relative
             font-inter
-            bg-stone-100 dark:bg-neutral-900
-            text-stone-900 dark:text-neutral-100;
+            bg-light-100 dark:bg-dark-900
+            text-light-900 dark:text-dark-100;
     }
-
-    /* HEADER */
-    .header {
-        @apply fixed
-            h-lvh md:h-16 w-screen;
-    }
-    #header-bar {
-        width: min(80vw, 18rem);
-        @apply absolute
-            transition-all
-            md:w-full h-full
-            flex max-md:flex-col md:items-center
-            bg-stone-100/30 dark:bg-neutral-900/30
-            max-md:border-r md:border-b border-white/5
-            backdrop-blur;
-    }
-    .header-enf {
-        @apply font-extrabold text-4xl
-            select-none
-            px-4 py-3;
-    }
-    .header-ul {
-        @apply flex flex-col md:flex-row grow justify-center;
-    }
-    .header-li {
-        @apply font-light text-4xl
-            px-4 py-2;
-    }
-    #header-icons {
-        @apply absolute
-            transition-colors
-            right-0
-            m-2 p-1 rounded
-            bg-stone-900 dark:bg-neutral-100
-            text-stone-100 dark:text-neutral-900
-            hover:text-stone-400 dark:hover:text-neutral-600;
-    }
-    /* MAIN */
-    .main-h1 {
-        @apply font-boldonse text-[14lvw];
-    }
-}
-
-@layer utilities {
-    .text-link {
-        @apply select-none cursor-pointer
-            hover:text-stone-600 dark:hover:text-neutral-400;
-    }
-    .bar-hide-transform {
-        @apply max-md:translate-x-[-150%] md:translate-y-[-150%] opacity-0;
-    }
-    .bar-hide-transform-icon {
-        /* @apply md:rotate-x-180 max-md:rotate-y-180; */
-        @apply rotate-x-180 rotate-y-180 opacity-0;
-    }
-
 }

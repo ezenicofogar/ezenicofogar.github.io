@@ -1,0 +1,7 @@
+@layer utilities {
+    /* HEADER */
+    .header-hide#header,
+    #header:not(.header-hide) + #header-openBtnContainer {
+        @apply max-md:-translate-x-72 md:-translate-y-32;
+    }
+}
