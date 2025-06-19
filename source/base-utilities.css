@@ -1,0 +1,9 @@
+@utility bg-base {
+    @apply bg-light-100 dark:bg-dark-900;
+}
+@utility text-base {
+    @apply text-light-900 dark:text-dark-100;
+}
+@utility text-dimmed {
+    @apply text-light-600 dark:text-dark-400;
+}

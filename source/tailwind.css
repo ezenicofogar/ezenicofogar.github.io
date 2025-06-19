@@ -3,28 +3,38 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    /* Default overrides */
-    --default-transition-duration: 400ms;
-    
     /* Google Fonts */
     --font-inter: "Inter", sans-serif;
     --font-boldonse: "Boldonse", system-ui;
+    
+    /* Default overrides */
+    --default-transition-duration: 400ms;
+    --default-font-family: var(--font-inter);
 
     /* Base Colors */
     --color-light-100: var(--color-stone-100);
+    --color-light-400: var(--color-stone-400);
+    --color-light-500: var(--color-stone-500);
+    --color-light-600: var(--color-stone-600);
     --color-light-900: var(--color-stone-900);
     --color-dark-100: var(--color-neutral-100);
+    --color-dark-400: var(--color-neutral-400);
+    --color-dark-500: var(--color-neutral-500);
+    --color-dark-600: var(--color-neutral-600);
     --color-dark-900: var(--color-neutral-900);
 }
 
 @import "./header.css";
+@import "./base-utilities.css";
 
 @layer base {
-    .bg-base {
-        @apply bg-light-100 dark:bg-dark-900;
-    }
-    .text-base {
-        @apply text-light-900 dark:text-dark-100;
+    /* BODY */
+    body {
+        @apply
+            relative
+            font-inter
+            bg-base
+            text-base;
     }
     .debug {
         @apply
@@ -35,12 +45,5 @@
 }
 
 @layer components {
-    /* BODY */
-    .body {
-        @apply
-            relative
-            font-inter
-            bg-light-100 dark:bg-dark-900
-            text-light-900 dark:text-dark-100;
-    }
+    
 }
