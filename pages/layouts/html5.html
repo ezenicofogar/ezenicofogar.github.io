@@ -1,27 +1,31 @@
+---
+title: Portfolio
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{ title }}</title>
     <!-- Google Fonts: Boldonse, Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <!-- Tailwind stylesheet -->
-    <link rel="stylesheet" href="./static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/style.css">
     <!-- Lenis stylesheet -->
-    <link rel="stylesheet" href="./static/thirdparties/lenis/lenis.min.css">
+    <link rel="stylesheet" href="/static/thirdparties/lenis/lenis.min.css">
     <!-- Dark mode utility -->
-    <script src="./static/js/DarkModeController.js"></script>
+    <script src="/static/js/DarkModeController.js"></script>
 </head>
 <body>
+    {{ content }}
     <!-- Gsap -->
-    <script src="./static/thirdparties/gsap/gsap.min.js"></script>
-    <script src="./static/thirdparties/gsap/ScrollTrigger.min.js"></script>
+    <script src="/static/thirdparties/gsap/gsap.min.js"></script>
+    <script src="/static/thirdparties/gsap/ScrollTrigger.min.js"></script>
     <!-- Lenis -->
-    <script src="./static/thirdparties/lenis/lenis.min.js"></script>
+    <script src="/static/thirdparties/lenis/lenis.min.js"></script>
     <!-- Bind Lenis and Gsap -->
-    <script src="./static/js/GsapLenis.js"></script>
+    <script src="/static/js/GsapLenis.js"></script>
 </body>
 </html>

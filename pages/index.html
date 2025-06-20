@@ -1,0 +1,16 @@
+---
+layout: html5.html
+---
+{% include 'header.html' %}
+
+<!-- TEMP MAIN -->
+<main>
+    <img src="./static/img/test.jpg" alt="background"
+    class="w-screen h-[200lvh] object-cover dark:invert opacity-80">
+    <ul class="flex gap-3">
+        <li id="togglelight" onclick="DarkModeController.Light()">Set LIGHT</li>
+        <li id="toggledark" onclick="DarkModeController.Dark()">Set DARK</li>
+        <li id="togglesystem" onclick="DarkModeController.System()">Set SYS</li>
+    </ul>
+</main>
+<!-- END TEMP MAIN -->

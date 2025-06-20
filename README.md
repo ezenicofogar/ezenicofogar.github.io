@@ -2,17 +2,46 @@
 
 ## Build
 
-This project is intended to be a static web page, only the styles are processed using [Tailwind](https://tailwindcss.com/).
+This project is a static page built from templates (using Eleventy). To build the project, run:
 
-- Use this command for **development**:
+```
+npm install
+```
+```
+npm run build-all
+```
 
-    `tailwindcss -i ./source/tailwind.css -o ./static/css/styles.css --watch`
+:warning: The resulting files should be already in the `docs` folder.
 
-- Use this command for **production**:
+### For active development
 
-    `tailwindcss -i ./source/tailwind.css -o ./static/css/styles.css --minify`
+Run Eleventy (templates) and Tailwind (styles) as separated watchers.
+
+#### Eleventy
+
+```
+npx eleventy --watch
+```
+
+#### Tailwind
+
+```
+npx tailwindcss -i ./tailwind/tailwind.css -o ./docs/static/css/style.css --watch
+```
+
+#### Server
+
+You can just open `docs/index.html`, or serve to localhost with [`statichost`](https://github.com/ezenicofogar/statichost/releases), my simple static server.
+
+```
+statichost -L ./docs
+```
 
 ## Which tools are used?
+
+- ### [Eleventy](https://www.11ty.dev/)
+
+    *MIT License*
 
 - ### [Tailwind CSS](https://tailwindcss.com/)
 

@@ -1,0 +1,20 @@
+{
+  "name": "ezenicofogar.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build-all": "eleventy && tailwindcss -i ./tailwind/tailwind.css -o ./docs/static/css/style.css",
+    "build": "eleventy",
+    "watch": "eleventy --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "packageManager": "pnpm@10.11.0",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.1",
+    "@tailwindcss/cli": "^4.1.10",
+    "prettier": "^3.5.3",
+    "tailwindcss": "^4.1.10"
+  }
+}
