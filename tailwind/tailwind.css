@@ -24,6 +24,9 @@
     --color-dark-500: var(--color-neutral-500);
     --color-dark-600: var(--color-neutral-600);
     --color-dark-900: var(--color-neutral-900);
+
+    /* Animation / GSAP */
+    --mixtitle-blur: 0px;
 }
 
 @import "./header.css";
@@ -52,5 +55,12 @@
             backdrop-blur
             bg-light-100/20
             dark:bg-dark-900/20;
+    }
+    .cromatic-blend {
+        @apply mix-blend-multiply dark:mix-blend-screen;
+        /* mix-blend-mode: color-burn;
+        &:where(.dark, .dark *) {
+            mix-blend-mode: screen;
+        } */
     }
 }
