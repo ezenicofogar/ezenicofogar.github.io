@@ -5,7 +5,13 @@ const DarkModeController = (()=>{
                 "dark",
                 localStorage.theme === "dark" ||
                 (!("theme" in localStorage) &&
-                window.matchMedia("(prefers-color-scheme: dark)").matches));
+                window.matchMedia("(prefers-color-scheme: dark)").matches)
+            );
+            for (const name of ["dark", "light","system"]) {
+                document.documentElement.classList.toggle(
+                    `themed-${name}`, this.Get() === name
+                )
+            }
         }
         constructor() {
             this._apply();
@@ -23,7 +29,7 @@ const DarkModeController = (()=>{
             this._apply();
         }
         Get() {
-            return ("theme" in localStorage) ? localStorage.theme : "System";
+            return ("theme" in localStorage) ? localStorage.theme : "system";
         }
     }
     return new DarkModeControllerClass();

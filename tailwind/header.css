@@ -1,7 +1,30 @@
 @layer utilities {
-    /* HEADER */
-    .header-hide#header,
-    #header:not(.header-hide) + #header-openBtnContainer {
-        @apply max-md:-translate-x-72 md:-translate-y-32 opacity-0;
+    /* HIDING BEHAVIOR */
+    header {
+        pointer-events: none;
     }
+    #header {
+        pointer-events: auto;
+        transition-property: translate, opacity;
+        transition-duration: var(--default-transition-duration);
+        transition-timing-function: var(--default-transition-timing-function);
+    }
+    header.header-closed #header {
+        pointer-events: none;
+        opacity: 0%;
+        translate: 0 -3rem;
+    }
+    #headerOpenBtn {
+        pointer-events: auto;
+        transition-property: scale, opacity;
+        transition-duration: var(--default-transition-duration);
+        transition-timing-function: var(--default-transition-timing-function);
+    }
+    header:not(.header-closed) #headerOpenBtn {
+        pointer-events: none;
+        opacity: 0%;
+        scale: 70%;
+    }
+
+
 }

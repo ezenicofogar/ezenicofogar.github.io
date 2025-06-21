@@ -1,30 +1,61 @@
-<header id="header" class="z-50 pointer-events-none header-hide fixed max-md:w-3xs max-md:h-screen md:w-screen md:h-20 p-3 transition-all">
-    <nav class="pointer-events-auto flex max-md:flex-col-reverse justify-between md:items-center
-            w-full h-full p-4 bg-light-100/70 dark:bg-dark-900/70
-            backdrop-blur border border-light-500/10 dark:border-dark-500/10 rounded-xl">
-        <p class="font-semibold text-2xl w-32 select-none">Portfolio</p>
-        <ul class="flex max-md:flex-col gap-2 md:gap-6 text-xl">
-            <li class="cursor-pointer hover:text-dimmed transition-colors">XD</li>
-            <li class="cursor-pointer hover:text-dimmed transition-colors">Portfolio</li>
-            <li class="cursor-pointer hover:text-dimmed transition-colors">Contacto</li>
-        </ul>
-        <div class="w-32 h-8 flex justify-start md:justify-end items-center">
-            <div id="header-closeBtn" class="relative flex justify-center items-center w-8 h-8 text-base-hover transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg"  width="36"  height="36"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
-            </div>
-        </div>
-    </nav>
-</header>
-<div id="header-openBtnContainer" class="z-50 pointer-events-none fixed p-3 transition-all">
-    <div id="header-openBtn" class="pointer-events-auto cursor-pointer flex justify-center items-center w-12 h-12 backdrop-blur bg-light-100/70 dark:bg-dark-900/70 border border-light-500/10 dark:border-dark-500/10 rounded-xl text-base-hover transition-colors">
-        <svg class="max-md:-rotate-90" xmlns="http://www.w3.org/2000/svg" width="36"  height="36"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-layout-navbar-expand"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 3a3 3 0 0 1 2.995 2.824l.005 .176v12a3 3 0 0 1 -2.824 2.995l-.176 .005h-12a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-12a3 3 0 0 1 2.824 -2.995l.176 -.005h12zm1 6h-14v9a1 1 0 0 0 .883 .993l.117 .007h12a1 1 0 0 0 .993 -.883l.007 -.117v-9zm-8.387 3.21l.094 .083l1.293 1.292l1.293 -1.292a1 1 0 0 1 1.32 -.083l.094 .083a1 1 0 0 1 .083 1.32l-.083 .094l-2 2a1 1 0 0 1 -1.32 .083l-.094 -.083l-2 -2a1 1 0 0 1 1.32 -1.497z" /></svg>
+<header class="fixed p-4 w-screen max-md:h-screen">
+    <div id="headerOpenBtn" class="absolute glass-blur p-2 rounded-lg cursor-pointer hover:text-dimmed">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="transition-colors">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M10 6h10" />
+            <path d="M4 12h16" />
+            <path d="M7 12h13" />
+            <path d="M4 18h10" />
+        </svg>
     </div>
-</div>
+    <div id="header" class="flex flex-col-reverse md:flex-row glass-blur p-4 md:p-2 rounded-lg w-full
+            max-md:h-full md:h-12 justify-between md:items-center">
+        <h1 class="text-4xl md:text-2xl font-bold pl-1 cursor-pointer hover:text-dimmed transition-colors">
+            Portfolio
+        </h1>
+        <nav>
+            <ul class="flex flex-col md:flex-row gap-1 md:gap-5 p-1 text-2xl">
+                <li class="cursor-pointer hover:text-dimmed transition-colors">
+                    Home
+                </li>
+                <li class="cursor-pointer hover:text-dimmed transition-colors">
+                    Projects
+                </li>
+                <li class="cursor-pointer hover:text-dimmed transition-colors">
+                    Tech
+                </li>
+                <li class="cursor-pointer hover:text-dimmed transition-colors">
+                    Contact
+                </li>
+            </ul>
+        </nav>
+        <div id="headerCloseBtn" class="cursor-pointer hover:text-dimmed">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="transition-colors md:hidden">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M18 6l-12 12" />
+                <path d="M6 6l12 12" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="transition-colors max-md:hidden">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
+                <path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" />
+                <path d="M3 3l18 18" />
+            </svg>
+        </div>
+    </div>
+</header>
 <script>
     (()=>{
-        const header = document.getElementById("header");
-        const toggler = ()=>{ header.classList.toggle("header-hide"); };
-        document.getElementById("header-closeBtn").addEventListener("click", toggler)
-        document.getElementById("header-openBtn").addEventListener("click", toggler)
+        const header = document.getElementsByTagName("header")[0];
+        const toggler = ()=>{ header.classList.toggle("header-closed"); };
+        if (window.innerWidth < 768) { toggler(); }
+        document.getElementById("headerCloseBtn").addEventListener("click", toggler);
+        document.getElementById("headerOpenBtn").addEventListener("click", toggler);
     })();
 </script>

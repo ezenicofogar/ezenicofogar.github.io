@@ -47,5 +47,10 @@
 }
 
 @layer components {
-    
+    .glass-blur {
+        @apply
+            backdrop-blur
+            bg-light-100/20
+            dark:bg-dark-900/20;
+    }
 }
