@@ -1,8 +1,32 @@
 @import "tailwindcss" source(none);
+
 @source "../pages";
 @source "../static/js";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@view-transition {
+    transition: auto;
+}
+
+::view-transition-group(*) {
+    animation-duration: 500ms;
+}
+
+::view-transition-old(root) {
+    animation: to-blurred 500ms forwards;
+}
+
+::view-transition-new(root) {
+    animation: to-blurred 500ms backwards;
+}
+
+@keyframes to-blurred {
+    from {
+        filter: blur(0)
+    }
+    to {
+        filter: blur(8px)
+    }
+}
 
 @theme {
     /* Google Fonts */
@@ -14,16 +38,11 @@
     --default-font-family: var(--font-inter);
 
     /* Base Colors */
-    --color-light-100: var(--color-stone-100);
-    --color-light-400: var(--color-stone-400);
-    --color-light-500: var(--color-stone-500);
-    --color-light-600: var(--color-stone-600);
-    --color-light-900: var(--color-stone-900);
-    --color-dark-100: var(--color-neutral-100);
-    --color-dark-400: var(--color-neutral-400);
-    --color-dark-500: var(--color-neutral-500);
-    --color-dark-600: var(--color-neutral-600);
-    --color-dark-900: var(--color-neutral-900);
+    --color-base-100: var(--color-stone-100);
+    --color-base-400: var(--color-stone-400);
+    --color-base-500: var(--color-stone-500);
+    --color-base-600: var(--color-stone-600);
+    --color-base-900: var(--color-stone-900);
 
     /* Animation / GSAP */
     --mixtitle-blur: 0px;
@@ -53,14 +72,9 @@
     .glass-blur {
         @apply
             backdrop-blur
-            bg-light-100/40
-            dark:bg-dark-900/40;
+            bg-base-900/30;
     }
     .cromatic-blend {
         @apply mix-blend-screen;
-        /* mix-blend-mode: color-burn;
-        &:where(.dark, .dark *) {
-            mix-blend-mode: screen;
-        } */
     }
 }
