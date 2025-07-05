@@ -1,12 +1,21 @@
-<div id="title-x" class="relative text-[11vw] pl-8 py-[1em] font-boldonse blur-[var(--mixtitle-blur)]">
-    <h1 class="mixtitle-r text-[#ff0] dark:text-[#f00] cromatic-blend blur-[1px] absolute">
-        {{ pageTitleText }}
-    </h1>
-    <h1 class="mixtitle-g text-[#f0f] dark:text-[#0f0] cromatic-blend blur-[1px] absolute">
-        {{ pageTitleText }}
-    </h1>
-    <h1 class="mixtitle-b text-[#0ff] dark:text-[#00f] cromatic-blend blur-[1px]">
-        {{ pageTitleText }}
-    </h1>
+<div class="relative h-screen flex flex-col justify-end overflow-hidden">
+    <div id="title-x" class="relative pointer-events-none text-[20vw] md:text-[12vw] px-[0.4em] py-[0.6em] mix-blend-screen font-boldonse blur-[var(--mixtitle-blur)]">
+        <h1 class="mixtitle-r text-[#d00] cromatic-blend blur-[1px] absolute">
+            <p class="max-md:hidden">{{ pageTitleText }}</p>
+            <p class="md:hidden">{{ pageTitleTextL1 }}</p>
+            <p class="md:hidden">{{ pageTitleTextL2 }}</p>
+        </h1>
+        <h1 class="mixtitle-g text-[#0d0] cromatic-blend blur-[1px] absolute">
+            <p class="max-md:hidden">{{ pageTitleText }}</p>
+            <p class="md:hidden">{{ pageTitleTextL1 }}</p>
+            <p class="md:hidden">{{ pageTitleTextL2 }}</p>
+        </h1>
+        <h1 class="mixtitle-b text-[#00d] cromatic-blend blur-[1px]">
+            <p class="max-md:hidden">{{ pageTitleText }}</p>
+            <p class="md:hidden">{{ pageTitleTextL1 }}</p>
+            <p class="md:hidden">{{ pageTitleTextL2 }}</p>
+        </h1>
+    </div>
 </div>
+
 <script type="module" src="/static/js/GsapTitleAnimation.js"></script>

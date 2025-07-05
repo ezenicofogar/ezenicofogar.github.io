@@ -53,11 +53,11 @@
     .glass-blur {
         @apply
             backdrop-blur
-            bg-light-100/20
-            dark:bg-dark-900/20;
+            bg-light-100/40
+            dark:bg-dark-900/40;
     }
     .cromatic-blend {
-        @apply mix-blend-multiply dark:mix-blend-screen;
+        @apply mix-blend-screen;
         /* mix-blend-mode: color-burn;
         &:where(.dark, .dark *) {
             mix-blend-mode: screen;

@@ -19,6 +19,35 @@
     <script src="/static/js/DarkModeController.js"></script>
   </head>
   <body>
+    <div class="absolute w-screen h-screen -z-50 overflow-hidden bg-black">
+      <div class="absolute w-full h-full bg-[#F00]"></div>
+      <img
+        class="absolute w-full h-full object-cover mix-blend-multiply scale-[105%] translate-x-1 translate-y-0.5"
+        src="/static/img/contact.png"
+        alt="background image"
+      />
+    </div>
+    <div
+      class="absolute w-screen h-screen -z-50 overflow-hidden mix-blend-screen"
+    >
+      <div class="absolute w-full h-full bg-[#0F0]"></div>
+      <img
+        class="absolute w-full h-full object-cover mix-blend-multiply scale-[105%]"
+        src="/static/img/contact.png"
+        alt="background image"
+      />
+    </div>
+    <div
+      class="absolute w-screen h-screen -z-50 overflow-hidden mix-blend-screen"
+    >
+      <div class="absolute w-full h-full bg-[#00F]"></div>
+      <img
+        class="absolute w-full h-full object-cover mix-blend-multiply scale-[105%] -translate-x-1 -translate-y-0.5"
+        src="/static/img/contact.png"
+        alt="background image"
+      />
+    </div>
+
     <header class="fixed p-4 w-screen max-md:h-screen z-50">
       <div
         id="headerOpenBtn"
@@ -126,27 +155,30 @@
     </script>
 
     <!-- TEMP MAIN -->
-    <main class="pt-[50vh]">
-      <div
-        id="title-x"
-        class="relative text-[11vw] pl-8 py-[1em] font-boldonse blur-[var(--mixtitle-blur)]"
-      >
-        <h1
-          class="mixtitle-r text-[#ff0] dark:text-[#f00] cromatic-blend blur-[1px] absolute"
+    <main class="">
+      <div class="relative h-screen flex flex-col justify-end overflow-hidden">
+        <div
+          id="title-x"
+          class="relative pointer-events-none text-[20vw] md:text-[12vw] px-[0.4em] py-[0.6em] mix-blend-screen font-boldonse blur-[var(--mixtitle-blur)]"
         >
-          Contact
-        </h1>
-        <h1
-          class="mixtitle-g text-[#f0f] dark:text-[#0f0] cromatic-blend blur-[1px] absolute"
-        >
-          Contact
-        </h1>
-        <h1
-          class="mixtitle-b text-[#0ff] dark:text-[#00f] cromatic-blend blur-[1px]"
-        >
-          Contact
-        </h1>
+          <h1 class="mixtitle-r text-[#d00] cromatic-blend blur-[1px] absolute">
+            <p class="max-md:hidden">Contact</p>
+            <p class="md:hidden">Con</p>
+            <p class="md:hidden">tact</p>
+          </h1>
+          <h1 class="mixtitle-g text-[#0d0] cromatic-blend blur-[1px] absolute">
+            <p class="max-md:hidden">Contact</p>
+            <p class="md:hidden">Con</p>
+            <p class="md:hidden">tact</p>
+          </h1>
+          <h1 class="mixtitle-b text-[#00d] cromatic-blend blur-[1px]">
+            <p class="max-md:hidden">Contact</p>
+            <p class="md:hidden">Con</p>
+            <p class="md:hidden">tact</p>
+          </h1>
+        </div>
       </div>
+
       <script type="module" src="/static/js/GsapTitleAnimation.js"></script>
 
       <p class="w-64 text-2xl">

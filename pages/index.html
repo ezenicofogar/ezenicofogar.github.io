@@ -1,13 +1,16 @@
 ---
 layout: html5.html
 pageTitleText: Portfolio
+pageTitleTextL1: Port
+pageTitleTextL2: folio
+bgImageLink: /static/img/portfolio.png
 ---
+{% include 'bgTitle.html' %}
 {% include 'header.html' %}
 
 <!-- TEMP MAIN -->
-<main class="pt-[50vh]">
+<main class="">
     {% include 'mixTitle.html' %}
-
 
     <ul class="flex gap-3">
         <li id="togglelight" onclick="DarkModeController.Light()">Set LIGHT</li>
