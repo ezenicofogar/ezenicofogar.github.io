@@ -6,7 +6,7 @@
 @view-transition {
     transition: auto;
 }
-
+/* 
 ::view-transition-group(*) {
     animation-duration: 500ms;
 }
@@ -26,7 +26,7 @@
     to {
         filter: blur(8px)
     }
-}
+} */
 
 @theme {
     /* Google Fonts */

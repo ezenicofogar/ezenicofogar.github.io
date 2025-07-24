@@ -9,6 +9,7 @@
     --color-fuchsia-500: oklch(66.7% 0.295 322.15);
     --color-stone-100: oklch(97% 0.001 106.424);
     --color-stone-400: oklch(70.9% 0.01 56.259);
+    --color-stone-500: oklch(55.3% 0.013 58.071);
     --color-stone-900: oklch(21.6% 0.006 56.043);
     --spacing: 0.25rem;
     --container-6xl: 72rem;
@@ -40,6 +41,7 @@
     --font-boldonse: "Boldonse", system-ui;
     --color-base-100: var(--color-stone-100);
     --color-base-400: var(--color-stone-400);
+    --color-base-500: var(--color-stone-500);
     --color-base-900: var(--color-stone-900);
     --mixtitle-blur: 0px;
   }
@@ -208,11 +210,41 @@
   .z-50 {
     z-index: 50;
   }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mr-1 {
+    margin-right: calc(var(--spacing) * 1);
+  }
+  .mr-2 {
+    margin-right: calc(var(--spacing) * 2);
+  }
+  .mr-4 {
+    margin-right: calc(var(--spacing) * 4);
+  }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
   }
   .flex {
     display: flex;
+  }
+  .inline {
+    display: inline;
+  }
+  .h-\[0\.8em\] {
+    height: 0.8em;
+  }
+  .h-\[0\.9em\] {
+    height: 0.9em;
+  }
+  .h-\[1\.2em\] {
+    height: 1.2em;
+  }
+  .h-\[1em\] {
+    height: 1em;
   }
   .h-\[66vw\] {
     height: 66vw;
@@ -225,6 +257,18 @@
   }
   .h-screen {
     height: 100vh;
+  }
+  .w-\[0\.8em\] {
+    width: 0.8em;
+  }
+  .w-\[0\.9em\] {
+    width: 0.9em;
+  }
+  .w-\[1\.2em\] {
+    width: 1.2em;
+  }
+  .w-\[1em\] {
+    width: 1em;
   }
   .w-full {
     width: 100%;
@@ -247,6 +291,14 @@
     --tw-translate-y: calc(var(--spacing) * -0.5);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
+  .-translate-y-1 {
+    --tw-translate-y: calc(var(--spacing) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .-translate-y-\[3px\] {
+    --tw-translate-y: calc(3px * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
   .translate-y-0\.5 {
     --tw-translate-y: calc(var(--spacing) * 0.5);
     translate: var(--tw-translate-x) var(--tw-translate-y);
@@ -255,6 +307,12 @@
     --tw-scale-x: 105%;
     --tw-scale-y: 105%;
     --tw-scale-z: 105%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .scale-110 {
+    --tw-scale-x: 110%;
+    --tw-scale-y: 110%;
+    --tw-scale-z: 110%;
     scale: var(--tw-scale-x) var(--tw-scale-y);
   }
   .scale-\[105\%\] {
@@ -284,9 +342,6 @@
   .justify-end {
     justify-content: flex-end;
   }
-  .gap-1 {
-    gap: calc(var(--spacing) * 1);
-  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
@@ -296,11 +351,11 @@
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
-  .gap-5 {
-    gap: calc(var(--spacing) * 5);
-  }
   .overflow-hidden {
     overflow: hidden;
+  }
+  .overflow-x-hidden {
+    overflow-x: hidden;
   }
   .rounded-lg {
     border-radius: var(--radius-lg);
@@ -371,11 +426,17 @@
   .pl-1 {
     padding-left: calc(var(--spacing) * 1);
   }
+  .pl-2 {
+    padding-left: calc(var(--spacing) * 2);
+  }
   .pl-4 {
     padding-left: calc(var(--spacing) * 4);
   }
   .text-center {
     text-align: center;
+  }
+  .align-middle {
+    vertical-align: middle;
   }
   .font-boldonse {
     font-family: var(--font-boldonse);
@@ -430,6 +491,9 @@
   }
   .text-base-400 {
     color: var(--color-base-400);
+  }
+  .text-base-500 {
+    color: var(--color-base-500);
   }
   .text-dimmed {
     color: var(--color-base-400);
@@ -516,19 +580,9 @@
       align-items: center;
     }
   }
-  .md\:gap-5 {
-    @media (width >= 48rem) {
-      gap: calc(var(--spacing) * 5);
-    }
-  }
   .md\:gap-7 {
     @media (width >= 48rem) {
       gap: calc(var(--spacing) * 7);
-    }
-  }
-  .md\:gap-8 {
-    @media (width >= 48rem) {
-      gap: calc(var(--spacing) * 8);
     }
   }
   .md\:p-2 {
@@ -579,23 +633,6 @@
 }
 @view-transition {
   transition: auto;
-}
-::view-transition-group(*) {
-  animation-duration: 500ms;
-}
-::view-transition-old(root) {
-  animation: to-blurred 500ms forwards;
-}
-::view-transition-new(root) {
-  animation: to-blurred 500ms backwards;
-}
-@keyframes to-blurred {
-  from {
-    filter: blur(0);
-  }
-  to {
-    filter: blur(8px);
-  }
 }
 @layer utilities {
   header {
