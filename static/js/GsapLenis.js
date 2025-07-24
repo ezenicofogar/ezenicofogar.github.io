@@ -1,8 +1,18 @@
 // Register gsap plugins
 gsap.registerPlugin(ScrollTrigger)
 
+function easer(x) {
+  // return x === 1 ? 1 : 1 - Math.pow(2, -10 * x);
+  return 1 - Math.pow(1 - x, 3);
+}
+
 // Initialize Lenis instance
-const lenis = new Lenis();
+const lenis = new Lenis({
+  "duration": 1.4,
+  "easing": easer,
+  "wheelMultiplier": 1.5,
+  "touchMultiplier": 1,
+});
 
 // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
 lenis.on('scroll', ScrollTrigger.update);

@@ -1,20 +1,48 @@
 <div class="relative h-[100svh] flex flex-col justify-end">
-    <div id="title-x" class="relative pointer-events-none text-[20vw] md:text-[12vw] px-[0.4em] py-[0.3em] mix-blend-screen font-boldonse blur-[var(--mixtitle-blur)]">
-        <h1 class="mixtitle-r text-[#d00] cromatic-blend blur-[1px] absolute">
+    <div id="title-x"
+        class="relative pointer-events-none text-[20vw] md:text-[12vw] px-[0.4em] py-[0.3em] mix-blend-lighten font-boldonse">
+        <h1 class="mixtitle-r text-[#F00] mix-blend-screen blur-[var(--mixtitle-blur)] absolute">
             <p class="max-md:hidden">{{ pageTitleText }}</p>
             <p class="md:hidden">{{ pageTitleTextL1 }}</p>
             <p class="md:hidden">{{ pageTitleTextL2 }}</p>
         </h1>
-        <h1 class="mixtitle-g text-[#0d0] cromatic-blend blur-[1px] absolute">
+        <h1 class="mixtitle-g text-[#0F0] mix-blend-screen blur-[var(--mixtitle-blur)] absolute">
             <p class="max-md:hidden">{{ pageTitleText }}</p>
             <p class="md:hidden">{{ pageTitleTextL1 }}</p>
             <p class="md:hidden">{{ pageTitleTextL2 }}</p>
         </h1>
-        <h1 class="mixtitle-b text-[#00d] cromatic-blend blur-[1px]">
+        <h1 class="mixtitle-b text-[#00F] mix-blend-screen blur-[var(--mixtitle-blur)]">
             <p class="max-md:hidden">{{ pageTitleText }}</p>
             <p class="md:hidden">{{ pageTitleTextL1 }}</p>
             <p class="md:hidden">{{ pageTitleTextL2 }}</p>
         </h1>
     </div>
 </div>
-<script type="module" src="/static/js/GsapTitleAnimation.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#title-x",
+                start: "top center",
+                end: "bottom top",
+                scrub: true,
+                // markers: true,
+            },
+        });
+        // const easing = "sine.in";
+        const easing = "none";
+        tl.fromTo(".mixtitle-r",
+            { x: 3, y: 1.5, opacity: 1 },
+            { x: "-1.8rem", y: "-0.9rem", opacity: 0.5, duration: 1, ease: easing }, 0);
+        tl.fromTo(".mixtitle-g",
+            { opacity: 1 },
+            { opacity: 0.5, duration: 1, ease: easing }, 0);
+        tl.fromTo(".mixtitle-b",
+            { x: -3, y: -1.5, opacity: 1 },
+            { x: "1.8rem", y: "0.9rem", opacity: 0.5, duration: 1, ease: easing }, 0);
+        tl.fromTo("html",
+            { "--mixtitle-blur": "1.5px", },
+            { "--mixtitle-blur": "4px", duration: 1, ease: easing }, 0
+        );
+    });
+</script>

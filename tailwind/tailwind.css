@@ -42,10 +42,16 @@
     --color-base-400: var(--color-stone-400);
     --color-base-500: var(--color-stone-500);
     --color-base-600: var(--color-stone-600);
+    --color-base-700: var(--color-stone-700);
+    --color-base-800: var(--color-stone-800);
     --color-base-900: var(--color-stone-900);
 
     /* Animation / GSAP */
     --mixtitle-blur: 0px;
+
+    /* Custom Shadows */
+    --shadow-bloom: 0 0 5px 2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    --shadow-bloom-lg: 0 0 12px 6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
 }
 
 @import "./header.css";
@@ -73,8 +79,5 @@
         @apply
             backdrop-blur
             bg-base-900/30;
-    }
-    .cromatic-blend {
-        @apply mix-blend-screen;
     }
 }

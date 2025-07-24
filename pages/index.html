@@ -6,11 +6,132 @@ pageTitleTextL2: folio
 bgImageLink: /static/img/portfolio.png
 ---
 
-<section class="h-screen flex flex-col justify-center">
-    <p class="text-center text-6xl px-4 py-4">
-        Sorry...
+<section id="hero-section" class="flex flex-col gap-2 py-24 px-6 md:px-12">
+    <h2 class="text-6xl md:text-8xl font-semibold gsap-slide-in-from-left">Ezequiel Fogar</h2>
+    <h3 class="text-2xl md:text-3xl text-base-400 pt-3 pb-6 gsap-fade-in">Software Developer</h3>
+    <p class="text-3xl md:text-5xl py-5 font-light gsap-fade-in">
+        Building Efficient and Scalable Systems from First Principles.
     </p>
-    <p class="text-center text-4xl px-4 py-4">
-        This page is still in-development.
+    <div class="text-3xl font-semibold flex flex-col items-baseline gap-4 pt-8 gsap-slide-in-from-left">
+        {% comment %}
+        <a href="/tech/" class="group flex items-center">
+            <svg  xmlns="http://www.w3.org/2000/svg" class="group-hover:text-dimmed transition-colors"
+                width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 21h4l13 -13a1.5 1.5 0 0 0 -4 -4l-13 13v4" />
+                <path d="M14.5 5.5l4 4" /><path d="M12 8l-5 -5l-4 4l5 5" />
+                <path d="M7 8l-1.5 1.5" /><path d="M16 12l5 5l-4 4l-5 -5" />
+                <path d="M16 17l-1.5 1.5" />
+            </svg>
+            <p class="relative py-1 pl-4 group-hover:text-dimmed transition-colors">Explore My Tech Stack</p>
+        </a>
+        {% endcomment %}
+        <a href="/tech/" class="group flex items-center">
+            <svg  xmlns="http://www.w3.org/2000/svg" class="group-hover:text-dimmed transition-colors"
+                width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+                <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+            </svg>
+            <p class="relative py-1 pl-4 group-hover:text-dimmed transition-colors">Get In Touch</p>
+        </a>
+    </div>
+</section>
+
+<section class="relative overflow-hidden h-[66vw] md:h-[50vh] w-screen">
+    <div class="absolute w-full h-full bg-[#F00] mix-blend-screen">
+        <img class="absolute w-full h-full mix-blend-multiply object-cover gsap-img-parallax scale-105 translate-x-1 translate-y-0.5" src="/static/img/guitar.png" alt="">
+    </div>
+    <div class="absolute w-full h-full bg-[#0F0] mix-blend-screen">
+        <img class="absolute w-full h-full mix-blend-multiply object-cover gsap-img-parallax scale-105" src="/static/img/guitar.png" alt="">
+    </div>
+    <div class="absolute w-full h-full bg-[#00F] mix-blend-screen">
+        <img class="absolute w-full h-full mix-blend-multiply object-cover gsap-img-parallax scale-105 -translate-x-1 -translate-y-0.5" src="/static/img/guitar.png" alt="">
+    </div>
+</section>
+
+<section id="about-section" class="flex flex-col gap-2 py-24 px-6 md:px-12">
+    <h2 class="text-6xl md:text-8xl font-semibold gsap-slide-in-from-left">About Me</h2>
+    <p class="text-2xl md:text-4xl pt-8 font-light max-w-6xl gsap-fade-in">
+        My deep dive into software began with C++, where I learned that the
+        'magic' of high-level languages is built on fundamental principles of
+        memory and logic. This foundation allows me to deconstruct complex
+        problems and learn new technologies rapidly, seeing the patterns that
+        connect them all.
     </p>
+    <p class="text-2xl md:text-4xl pt-4 font-light max-w-6xl gsap-fade-in">
+        I put this foundation into practice at Cotton SP, where I led a small
+        team, designed database models with Django, and honed my skills in
+        creating pragmatic, maintainable code. Now, I am channeling that
+        experience into modern back-end development with Go and Python.
+    </p>
+    <p class="text-2xl md:text-4xl pt-4 font-light max-w-6xl gsap-fade-in">
+        Outside of code, I'm a musician and a cook, but it's my passion for
+        factory games that best describes my engineering mindset. I love the
+        process of iterating, optimizing complex systems, and planning for
+        scale. I always keep a pen and paper by my side to structure my
+        thoughts.
+    </p>
+</section>
+
+<section class="relative overflow-hidden h-[66vw] md:h-[50vh] w-screen">
+    <div class="absolute w-full h-full bg-[#F00] mix-blend-screen opacity-70">
+        <img class="absolute w-full h-full mix-blend-multiply object-cover gsap-img-parallax scale-105 translate-x-1 translate-y-0.5" src="/static/img/archi.png" alt="">
+    </div>
+    <div class="absolute w-full h-full bg-[#0F0] mix-blend-screen opacity-70">
+        <img class="absolute w-full h-full mix-blend-multiply object-cover gsap-img-parallax scale-105" src="/static/img/archi.png" alt="">
+    </div>
+    <div class="absolute w-full h-full bg-[#00F] mix-blend-screen opacity-70">
+        <img class="absolute w-full h-full mix-blend-multiply object-cover gsap-img-parallax scale-105 -translate-x-1 -translate-y-0.5" src="/static/img/archi.png" alt="">
+    </div>
+</section>
+
+<section id="about-section" class="flex flex-col gap-2 py-24 px-6 md:px-12">
+    <h2 class="text-6xl md:text-8xl font-semibold gsap-slide-in-from-left">My journey</h2>
+    <div class="text-2xl md:text-3xl pt-12 font-light max-w-6xl">
+        <h4 class="text-3xl md:text-5xl gsap-slide-in-from-left">
+            <b class="font-bold">Software Developer</b>
+        </h4>
+        <div class="gsap-fade-in">
+            <p class="text-dimmed pb-4">
+                Technical Career | 2024 - Present
+            </p>
+            <p>
+                Deepening my expertise in Python and Go, with a focus on
+                advanced database architecture, operating systems, and systems
+                analysis.
+            </p>
+        </div>
+        <h4 class="text-3xl md:text-5xl gsap-slide-in-from-left pt-12">
+            <b class="font-bold">Technical Lead & Developer</b>
+        </h4>
+        <div class="gsap-fade-in">
+            <p class="text-dimmed pb-4">
+                Cotton SP (Start-Up) | 2022 - 2023
+            </p>
+            <p>
+                Led a team of two developers in building and deploying
+                full-stack web solutions with Django.
+            </p>
+            <p>
+                Designed and implemented robust database models and business
+                logic.
+            </p>
+            <p>
+                Championed pragmatic code, refactoring to reduce dependencies
+                and improve long-term maintainability.
+            </p>
+        </div>
+        <h4 class="text-3xl md:text-5xl gsap-slide-in-from-left pt-12">
+            <b class="font-bold">Academic Foundation</b>
+        </h4>
+        <div class="gsap-fade-in">
+            <p class="text-dimmed pb-4">
+                University | 2017 - 2020
+            </p>
+            <p>
+                Built a deep understanding of computer science fundamentals through coursework in C, C++, data structures, algorithms, and 3D graphics mathematics.
+            </p>
+        </div>
+    </div>
 </section>
